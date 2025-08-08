@@ -1,3 +1,9 @@
+print("\nH2: There is a relationship between the presence of certain special characters and typographic features in a campaign's subtitle and its chance of success.\n")
+print("H2a: The presence of exclamation points in a campaign's subtitle increases its chance of success.\n")
+print("H2b: The presence of emoji in a campaign's subtitle increases its chance of success.\n")
+print("H2c: The presence of capital letters (CAPS LOCK) in a campaign's subtitle increases its chance of success..\n")
+print("H2d: Using single periods in a subtitle decreases the chance of success.\n")
+
 import os
 try:
     import pandas as pd
@@ -133,7 +139,7 @@ for col in binary_features:
 success_dots = df.loc[df["success"] == 1, "dot_count"]
 fail_dots = df.loc[df["success"] == 0, "dot_count"]
 U, p = mannwhitneyu(success_dots, fail_dots)
-print(f"\n\Mann-Whitney test (number of dots): U={U:.2f}, p={p:.4f}")
+print(f"\nMann-Whitney test (number of dots): U={U:.2f}, p={p:.4f}")
 print(f"Average dot number (success): {success_dots.mean():.3f}")
 print(f"Average dot number (failure): {fail_dots.mean():.3f}")
 
