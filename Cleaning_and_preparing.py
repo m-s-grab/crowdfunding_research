@@ -4,7 +4,7 @@ from langdetect import detect, DetectorFactory
 from langdetect.lang_detect_exception import LangDetectException
 
 #Ścieżki
-data_folder = "D:\WSB\Data Github"
+data_folder = os.path.join("data")
 input_files = [os.path.join(data_folder, f) for f in os.listdir(data_folder) if f.endswith(".csv")]
 output_file = os.path.join(data_folder, "Tabletop_Games_cleaned.csv")
 
