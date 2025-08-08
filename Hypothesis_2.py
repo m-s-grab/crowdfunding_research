@@ -1,4 +1,4 @@
-print("\nH2: There is a relationship between the presence of certain special characters and typographic features in a campaign's subtitle and its chance of success.\n")
+print("\nHypothesis 2: There is a relationship between the presence of certain special characters and typographic features in a campaign's subtitle and its chance of success.\n")
 print("H2a: The presence of exclamation points in a campaign's subtitle increases its chance of success.\n")
 print("H2b: The presence of emoji in a campaign's subtitle increases its chance of success.\n")
 print("H2c: The presence of capital letters (CAPS LOCK) in a campaign's subtitle increases its chance of success..\n")
