@@ -12,8 +12,8 @@ try:
     import nltk
     import matplotlib.ticker as mtick
 except ModuleNotFoundError as e:
-    print("Brakująca biblioteka:", e.name)
-    print('Please run: pip install -r requirements.txt')
+    print("Missing library:", e.name)
+    print('Please run: pip install -r requirements.txt in the terminal')
     exit(1)
 
 nltk.download('stopwords')
