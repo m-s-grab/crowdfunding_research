@@ -115,7 +115,7 @@ plt.show()
 plt.savefig("Optimal_blurb.jpg", format="jpg", dpi=300)
 plt.close()
 
-print("\nRepeating the title content in a campaign's subtitle negatively impacts its likelihood of achieving its goal.\n")
+print("\nH1b: Repeating the title content in a campaign's subtitle negatively impacts its likelihood of achieving its goal.\n")
 
 # Defining repeated percent of the title in blurbs - skipping stopwords!
 def title_in_blurb(title, blurb):
