@@ -8,8 +8,8 @@ import statsmodels.formula.api as smf
 import statsmodels.api as sm
 
 # --- Wczytanie i przygotowanie danych ---
-plik = r"D:\WSB\Data\DO BADANIA\Dane_do_badania.csv"
-df = pd.read_csv(plik)
+file = os.path.join("output", "Tabletop_Games_cleaned.csv")
+df = pd.read_csv(file)
 
 # Usuwamy wiersze z brakami w ważnych kolumnach i konwertujemy typy
 df.dropna(subset=["blurb", "name", "percent_funded", "state"], inplace=True)
