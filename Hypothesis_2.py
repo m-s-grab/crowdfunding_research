@@ -192,7 +192,7 @@ plt.show()
 plt.savefig("H2_Boxplot.jpg", format="jpg", dpi=300)
 plt.close()
 
-# Logistic regression with percentage caps (nonlinearity assumption)
+# Logistic regression with percentage caps (nonlinearity assumption based on scientific literature on crowdfunding)
 df['caps_pct_sq'] = df['blurb_caps_pct'] ** 2
 X = sm.add_constant(df[['blurb_caps_pct', 'caps_pct_sq']])
 y = df['success']
