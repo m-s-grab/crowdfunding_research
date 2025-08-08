@@ -56,7 +56,7 @@ df['state'] = df['state'].map({'successful': 1, 'failed': 0})
 df = df[~((df['state'] == 0) & (df['percent_funded'] >= 1.0))]
 df = df[~((df['state'] == 1) & (df['percent_funded'] < 1.0))]
 
-#Usuwamy outliery tylko dla udanych kampanii
+#Usuwamy outliery tylko dla udanych kampanii (metoda rozstępu międzykwartylowego)
 df_success = df[df['state'] == 1].copy()
 df_success = df_success[df_success['goal_usd'] >= 15]
 Q1 = df_success['percent_funded'].quantile(0.25)
