@@ -1,4 +1,5 @@
 pandas
+langdetect
 numpy
 matplotlib
 seaborn
