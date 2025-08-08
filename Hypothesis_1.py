@@ -1,19 +1,28 @@
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
-import statsmodels.api as sm
-import statsmodels.formula.api as smf
-from scipy.stats import anderson, anderson_ksamp, pearsonr, spearmanr, mannwhitneyu, pointbiserialr
-from nltk.corpus import stopwords
-import nltk
-import matplotlib.ticker as mtick
+import os
+try:
+    import pandas as pd
+    import numpy as np
+    import matplotlib.pyplot as plt
+    import seaborn as sns
+    import statsmodels.api as sm
+    import statsmodels.formula.api as smf
+    from scipy.stats import anderson, anderson_ksamp, pearsonr, spearmanr, mannwhitneyu, pointbiserialr
+    from nltk.corpus import stopwords
+    import nltk
+    import matplotlib.ticker as mtick
+except ModuleNotFoundError as e:
+    print("Brakująca biblioteka:", e.name)
+    print('Please run: pip install -r requirements.txt')
+    exit(1)
 
 nltk.download('stopwords')
 stop_words = set(stopwords.words('english'))
 
 # Loading data
 file = os.path.join("output", "Tabletop_Games_cleaned.csv")
+if not os.path.isfile(file):
+    print('File not found! Please use the "0. Cleaning and preparing.py" first.')
+    exit(1)
 df = pd.read_csv(file).dropna(subset=["name", "blurb", "percent_funded", "state"])
 df["name"] = df["name"].astype(str)
 df["blurb"] = df["blurb"].astype(str)
