@@ -7,3 +7,4 @@ statsmodels
 scipy
 nltk
 ipython
+re
