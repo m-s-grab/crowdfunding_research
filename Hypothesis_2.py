@@ -8,6 +8,10 @@ try:
     from scipy.stats import chi2_contingency, mannwhitneyu, anderson
     import statsmodels.formula.api as smf
     import statsmodels.api as sm
+except ModuleNotFoundError as e:
+    print("Missing library:", e.name)
+    print('Please run: pip install -r requirements.txt in the terminal')
+    exit(1)
 
 # Loading data
 file = os.path.join("output", "Tabletop_Games_cleaned.csv")
@@ -69,7 +73,6 @@ def is_exception(word):
 
 df["has_exclamation"] = df["blurb"].str.contains("!", regex=False).astype(int)
 df["has_emoji"] = df["blurb"].apply(lambda x: int(bool(emoji_pattern.search(x))))
-df["ends_with_dot"] = df["blurb"].str.contains(r"(?<!\.)\.(?!\.)\s*$").astype(int)
 
 def has_capslock_pattern(row):
     blurb_words = row["blurb"].split()
@@ -135,7 +138,7 @@ print(f"Average dot number (success): {success_dots.mean():.3f}")
 print(f"Average dot number (failure): {fail_dots.mean():.3f}")
 
 # Logistic regression model for binary features
-model_bin = smf.logit("success ~ has_exclamation + has_emoji + ends_with_dot + has_caps_lock", data=df).fit(disp=False)
+model_bin = smf.logit("success ~ has_exclamation + has_emoji + has_caps_lock", data=df).fit(disp=False)
 print(model_bin.summary())
 
 # % of letters in the entire blurb written with CAPS LOCK (ignoring the exceptions)
@@ -171,14 +174,14 @@ print(f"Failure - stats: {ad_fail.statistic:.4f}, crit values: {ad_fail.critical
 
 # Mann-Whitney test
 u_stat, p_val = mannwhitneyu(caps_success, caps_fail)
-print(f"\nTest Mann-Whitneya dla procentu caps: U = {u_stat:.2f}, p = {p_val:.4f}")
+print(f"\nMann-Whitney test for CAPS LOCK %: U = {u_stat:.2f}, p = {p_val:.4f}")
 
 # Boxplot
 plt.figure(figsize=(6, 5))
 sns.boxplot(x="success", y="blurb_caps_pct", data=df)
-plt.xticks([0,1], ["Porażka", "Sukces"])
-plt.title("Procent wielkich liter w blurbie wg sukcesu")
-plt.ylabel("Procent liter wielkich")
+plt.xticks([0,1], ["Failure", "Success"])
+plt.title("Percentage of capital letters in blurb by final state")
+plt.ylabel("Capital letters %")
 plt.show()
 plt.savefig("H2_Boxplot.jpg", format="jpg", dpi=300)
 plt.close()
@@ -192,7 +195,7 @@ print(model_quad.summary())
 
 b1, b2 = model_quad.params['blurb_caps_pct'], model_quad.params['caps_pct_sq']
 opt_caps = -b1 / (2 * b2) if b2 != 0 else np.nan
-print(f"Optymalny procent wielkich liter: {opt_caps:.2f}%")
+print(f"Optimal % of CAPS letters: {opt_caps:.2f}%")
 
 # Visualization
 x_vals = np.linspace(0, 100, 500)
@@ -203,11 +206,11 @@ X_plot = sm.add_constant(pd.DataFrame({
 y_preds = model_quad.predict(X_plot)
 
 plt.figure(figsize=(10, 6))
-plt.plot(x_vals, y_preds, label="Prawdopodobieństwo sukcesu", color='blue')
-plt.axvline(opt_caps, color='red', linestyle='--', label=f"Optymalny procent ({opt_caps:.2f}%)")
-plt.xlabel("Procent wielkich liter w blurbie")
-plt.ylabel("Prawdopodobieństwo sukcesu")
-plt.title("Wpływ wielkich liter w blurbie na sukces kampanii")
+plt.plot(x_vals, y_preds, label="Success probability", color='blue')
+plt.axvline(opt_caps, color='red', linestyle='--', label=f"Optimal % of CAPS: ({opt_caps:.2f}%)")
+plt.xlabel("Percentage of capital letters in blurb")
+plt.ylabel("Probability of success")
+plt.title("The Impact of Capital Letters in a Blurb on Campaign Success")
 plt.legend()
 plt.grid(True)
 plt.tight_layout()
