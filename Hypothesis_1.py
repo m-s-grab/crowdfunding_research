@@ -3,6 +3,7 @@ try:
     import pandas as pd
     import numpy as np
     import matplotlib.pyplot as plt
+    from IPython.display import Image, display
     import seaborn as sns
     import statsmodels.api as sm
     import statsmodels.formula.api as smf
@@ -90,7 +91,11 @@ plt.xlabel("Title length (words)")
 plt.ylabel("Blurb length (words)")
 plt.title("Heatmap: Impact of Title and Blur Length")
 plt.gca().invert_yaxis()
-plt.show()
+plt.savefig("Heatmap.jpg", format="jpg", dpi=300)
+plt.close()
+
+# Wyświetlenie jako obraz
+display(Image("wykres_codespace.jpg"))
 
 # Optimal blurb length
 print("\nOptimal blurb length for title length")
