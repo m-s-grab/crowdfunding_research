@@ -1,7 +1,13 @@
 import os
-import pandas as pd
-from langdetect import detect, DetectorFactory
-from langdetect.lang_detect_exception import LangDetectException
+try:
+    import pandas as pd
+    from langdetect import detect, DetectorFactory
+    from langdetect.lang_detect_exception import LangDetectException
+except ModuleNotFoundError as e:
+    print("Brakująca biblioteka:", e.name)
+    print('Please run: pip install -r requirements.txt')
+    exit(1)
+
 
 #Ścieżki
 data_folder = os.path.join("data")
