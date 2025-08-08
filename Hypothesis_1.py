@@ -1,3 +1,7 @@
+print("\nHypothesis 1: There is a relationship between the characteristics of a crowdfunding campaign's title "
+      "and subtitle and the likelihood of achieving its financial goal.\n")
+print("H1a: Title length negatively correlates with the optimal subtitle length.\n")
+
 import os
 try:
     import pandas as pd
@@ -29,10 +33,6 @@ df["name"] = df["name"].astype(str)
 df["blurb"] = df["blurb"].astype(str)
 df["percent_funded"] = df["percent_funded"].astype(float)
 df["success"] = df["state"].astype(int)
-
-print("\nHypothesis 1: There is a relationship between the characteristics of a crowdfunding campaign's title "
-      "and subtitle and the likelihood of achieving its financial goal.\n")
-print("H1a: Title length negatively correlates with the optimal subtitle length.\n")
 
 # Defining variables
 df["title_len_words"] = df["name"].str.split().str.len()
