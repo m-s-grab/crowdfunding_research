@@ -6,7 +6,7 @@ from langdetect.lang_detect_exception import LangDetectException
 #Ścieżki
 data_folder = os.path.join("data")
 input_files = [os.path.join(data_folder, f) for f in os.listdir(data_folder) if f.endswith(".csv")]
-output_file = os.path.join(data_folder, "Tabletop_Games_cleaned.csv")
+output_file = os.path.join(output, "Tabletop_Games_cleaned.csv")
 
 #Wczytanie danych
 df_all = pd.concat((pd.read_csv(f, low_memory=False) for f in input_files), ignore_index=True)
