@@ -1,2 +1,8 @@
 pandas
-langdetect
+numpy
+matplotlib
+seaborn
+statsmodels
+scipy
+nltk
+ipython
