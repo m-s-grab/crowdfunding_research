@@ -112,6 +112,8 @@ plt.xlabel("Title length (words)")
 plt.ylabel("Optimal blurb length (words)")
 plt.grid(True)
 plt.show()
+plt.savefig("Optimal_blurb.jpg", format="jpg", dpi=300)
+plt.close()
 
 print("\nRepeating the title content in a campaign's subtitle negatively impacts its likelihood of achieving its goal.\n")
 
@@ -152,6 +154,8 @@ plt.ylim(0, 1)
 plt.gca().yaxis.set_major_formatter(mtick.PercentFormatter(1.0))
 plt.tight_layout()
 plt.show()
+plt.savefig("Violin_plot.jpg", format="jpg", dpi=300)
+plt.close()
 
 # Nonlinear Logistic Regression Model: % of Title repeated
 model_repeat = smf.logit("success ~ title_repeated_percent + title_repeated_percent_sq", data=df).fit()
@@ -168,6 +172,8 @@ plt.ylabel("Success probability")
 plt.title("Nonlinear regression: title repetition")
 plt.grid(True)
 plt.show()
+plt.savefig("Regression_graph.jpg", format="jpg", dpi=300)
+plt.close()
 
 # Linear regression: % funded vs % title repeated
 X = sm.add_constant(df['title_repeated_percent'])
