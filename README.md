@@ -1,3 +1,10 @@
+# Crowdfunding Campaign Analysis for Tabletop Games
+
+This repository contains the scripts used for my thesis research:
+**"Success Factors in Crowdfunding Campaigns for Tabletop Games"**
+
+The goal of this project is to analyze the relationship between various linguistic and stylistic features of Kickstarter campaign titles/subtitles and the likelihood of campaign success.
+
 **Repository Structure**
 - /data – Contains:
   - A few example `.csv` files that were already preprocessed (e.g., final campaign states updated).
