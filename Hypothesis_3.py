@@ -3,11 +3,11 @@ print("Hypothesis 3: There is a relationship between the presence of industry ja
 import os
 try:
     import pandas as pd
-  import re
-  import numpy as np
-  import matplotlib.pyplot as plt
-  from collections import defaultdict
-  from scipy.stats import chi2_contingency, anderson_ksamp, mannwhitneyu, spearmanr
+    import re
+    import numpy as np
+    import matplotlib.pyplot as plt
+    from collections import defaultdict
+    from scipy.stats import chi2_contingency, anderson_ksamp, mannwhitneyu, spearmanr
 except ModuleNotFoundError as e:
     print("Missing library:", e.name)
     print('Please run: pip install -r requirements.txt in the terminal')
