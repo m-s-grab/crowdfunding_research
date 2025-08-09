@@ -17,6 +17,7 @@ This script will:
 - Perform data cleaning:
   - Remove duplicates (keeping the most up-to-date records).
   - Remove campaigns with non-English blurbs.
+  - Remove outliers
 - Apply other necessary preprocessing steps.
 
 **Research Hypotheses**
