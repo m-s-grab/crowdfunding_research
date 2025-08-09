@@ -6,7 +6,7 @@ Scripts – Python scripts for cleaning, preparing, and analyzing the dataset.
 
 **How to Run**
 1. Install requirements:
-<pre> ```bash pip install -r requirements.txt ``` </pre>
+<pre>pip install -r requirements.txt</pre>
 
 2. Then start by running
 python 0.Cleaning_and_preparing.py
