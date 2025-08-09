@@ -91,7 +91,7 @@ plt.xlabel("Title length (words)")
 plt.ylabel("Blurb length (words)")
 plt.title("Heatmap: Impact of Title and Blur Length")
 plt.gca().invert_yaxis()
-plt.savefig("Heatmap.jpg", format="jpg", dpi=300)
+plt.savefig("H1_Heatmap.jpg", format="jpg", dpi=300)
 plt.close()
 
 # Wyświetlenie jako obraz
@@ -112,7 +112,7 @@ plt.xlabel("Title length (words)")
 plt.ylabel("Optimal blurb length (words)")
 plt.grid(True)
 plt.show()
-plt.savefig("Optimal_blurb.jpg", format="jpg", dpi=300)
+plt.savefig("H1_Optimal_blurb.jpg", format="jpg", dpi=300)
 plt.close()
 
 print("\nH1b: Repeating the title content in a campaign's subtitle negatively impacts its likelihood of achieving its goal.\n")
@@ -154,7 +154,7 @@ plt.ylim(0, 1)
 plt.gca().yaxis.set_major_formatter(mtick.PercentFormatter(1.0))
 plt.tight_layout()
 plt.show()
-plt.savefig("Violin_plot.jpg", format="jpg", dpi=300)
+plt.savefig("H1_Violin_plot.jpg", format="jpg", dpi=300)
 plt.close()
 
 # Nonlinear Logistic Regression Model: % of Title repeated
@@ -172,7 +172,7 @@ plt.ylabel("Success probability")
 plt.title("Nonlinear regression: title repetition")
 plt.grid(True)
 plt.show()
-plt.savefig("Regression_graph.jpg", format="jpg", dpi=300)
+plt.savefig("H1_Regression_graph.jpg", format="jpg", dpi=300)
 plt.close()
 
 # Linear regression: % funded vs % title repeated
