@@ -8,6 +8,8 @@ try:
     import matplotlib.pyplot as plt
     from collections import defaultdict
     from scipy.stats import chi2_contingency, anderson_ksamp, mannwhitneyu, spearmanr
+    import statsmodels.formula.api as smf
+    import statsmodels.api as sm
 except ModuleNotFoundError as e:
     print("Missing library:", e.name)
     print('Please run: pip install -r requirements.txt in the terminal')
@@ -72,9 +74,13 @@ def generate_variants(term):
         variants.update({term.lower().replace("-", " "), term.lower().replace("-", "")})
     return variants
 
+print("Creating jargon variants")
+
 jargon_variants = set()
 for term in jargon_terms_raw:
     jargon_variants.update(generate_variants(term))
+
+print("Searching for jargon terms in blurbs - please wait.")
 
 # Functions for checking if jargon is present and how many jargon terms are in a blurb.
 def contains_jargon(text):
