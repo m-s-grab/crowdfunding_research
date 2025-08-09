@@ -37,13 +37,13 @@ H3: There is a relationship between the presence of industry-specific jargon wor
 H4: Campaigns with subtitles written in a mixed style (combining narrative and technical elements) have a higher chance of success than campaigns using exclusively narrative or technical style
 
 **Statistical Methods Used**
--Anderson–Darling test – Checks whether quantitative data follows a distribution close to normal. Unlike the Shapiro–Wilk test, it has no restrictions on sample size.
--Mann–Whitney U test – Non-parametric alternative to the Student’s t-test, used when the assumption of normality is not met. Compares two independent groups (successful vs. unsuccessful campaigns).
--Chi-squared test of independence – Checks whether two categorical variables are statistically independent by comparing observed vs. expected counts.
--Cramér’s V coefficient – Measures the strength of association between two categorical variables when the Chi-squared test shows a significant relationship.
--Spearman’s rank correlation – Measures the strength and direction of the relationship between two variables based on their ranks rather than raw values.
--Linear regression analysis – Explains how the value of a dependent variable (e.g., percent funded) changes under the influence of one or more independent variables.
--Logistic regression analysis – Models the relationship between one or more independent variables and a binary dependent variable (0 = failure, 1 = success), using the maximum likelihood estimation method.
+- Anderson–Darling test – Checks whether quantitative data follows a distribution close to normal. Unlike the Shapiro–Wilk test, it has no restrictions on sample size.
+- Mann–Whitney U test – Non-parametric alternative to the Student’s t-test, used when the assumption of normality is not met. Compares two independent groups (successful vs. unsuccessful campaigns).
+- Chi-squared test of independence – Checks whether two categorical variables are statistically independent by comparing observed vs. expected counts.
+- Cramér’s V coefficient – Measures the strength of association between two categorical variables when the Chi-squared test shows a significant relationship.
+- Spearman’s rank correlation – Measures the strength and direction of the relationship between two variables based on their ranks rather than raw values.
+- Linear regression analysis – Explains how the value of a dependent variable (e.g., percent funded) changes under the influence of one or more independent variables.
+- Logistic regression analysis – Models the relationship between one or more independent variables and a binary dependent variable (0 = failure, 1 = success), using the maximum likelihood estimation method.
 
 **Notes**
 The script for testing H4 is currently being optimized. This was the most complex hypothesis, involving, among other things, the creation of a key for automatically assigning points for the "technical" and "narrative" styles. During the research phase, this analysis was performed using several separate scripts. A consolidated and optimized version will be added to the repository soon.
