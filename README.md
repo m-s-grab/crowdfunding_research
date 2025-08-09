@@ -12,7 +12,7 @@ Original data comes from the WebRobots Kickstarter Dataset (https://webrobots.io
 
 2. Then start by running "0.Cleaning_and_preparing.py"
 This script will:
-- Merge CSV files from the /data folder into a single file.
+- Merge CSV files from the /data folder into a single file in the "output" folder.
 - Filter only campaigns from the "Tabletop Games" category.
 - Perform data cleaning:
   - Remove duplicates (keeping the most up-to-date records).
@@ -34,6 +34,8 @@ H2d: The use of single dots in the subtitle decreases the likelihood of success.
 
 H3: There is a relationship between the presence of industry-specific jargon words in the subtitle of a crowdfunding campaign and its chances of success.
 
+H4: Campaigns with subtitles written in a mixed style (combining narrative and technical elements) have a higher chance of success than campaigns using exclusively narrative or technical style
+
 **Statistical Methods Used**
 -Anderson–Darling test – Checks whether quantitative data follows a distribution close to normal. Unlike the Shapiro–Wilk test, it has no restrictions on sample size.
 -Mann–Whitney U test – Non-parametric alternative to the Student’s t-test, used when the assumption of normality is not met. Compares two independent groups (successful vs. unsuccessful campaigns).
@@ -44,6 +46,8 @@ H3: There is a relationship between the presence of industry-specific jargon wor
 -Logistic regression analysis – Models the relationship between one or more independent variables and a binary dependent variable (0 = failure, 1 = success), using the maximum likelihood estimation method.
 
 **Notes**
+The script for testing H4 is currently being optimized. This was the most complex hypothesis, involving, among other things, the creation of a key for automatically assigning points for the "technical" and "narrative" styles. During the research phase, this analysis was performed using several separate scripts. A consolidated and optimized version will be added to the repository soon.
+
 The sample CSV files provided are only a small subset of the full Kickstarter dataset.
 
 The research was focused exclusively on Tabletop Games campaigns.
