@@ -8,15 +8,14 @@ Scripts – Python scripts for cleaning, preparing, and analyzing the dataset.
 1. Install requirements:
 <pre>pip install -r requirements.txt</pre>
 
-2. Then start by running
-python 0.Cleaning_and_preparing.py
+2. Then start by running "0.Cleaning_and_preparing.py"
 This script will:
--Merge CSV files from the /data folder into a single file.
--Filter only campaigns from the "Tabletop Games" category.
--Perform data cleaning:
-  -Remove duplicates (keeping the most up-to-date records).
-  -Remove campaigns with non-English blurbs.
--Apply other necessary preprocessing steps.
+- Merge CSV files from the /data folder into a single file.
+- Filter only campaigns from the "Tabletop Games" category.
+- Perform data cleaning:
+  - Remove duplicates (keeping the most up-to-date records).
+  - Remove campaigns with non-English blurbs.
+- Apply other necessary preprocessing steps.
 
 **Research Hypotheses**
 The hypotheses were formulated based on a thorough review of the literature on crowdfunding campaign success factors:
