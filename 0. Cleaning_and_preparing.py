@@ -82,5 +82,5 @@ df_cleaned = df_cleaned.drop(columns=[col for col in columns_to_drop if col in d
 
 # Saving the database
 df_cleaned.to_csv(output_file, index=False, encoding="utf-8-sig")
-print(f"✅ Finalne dane zapisano do: {output_file}")
-print(f"📊 Liczba kampanii po oczyszczeniu: {len(df_cleaned)}")
+print(f"✅ Final data saved to: {output_file}")
+print(f"📊 The number of campaigns after the cleanup: {len(df_cleaned)}")
