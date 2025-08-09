@@ -120,7 +120,7 @@ def cramers_v(conf_matrix):
 # Proceeding with the test - checking if there are any exclamation marks, emojis, CAPS LOCK'ed words or singular non-numerical dots.
 # Statistical tests - Chi square + V Cramer
 
-binary_features = ["has_exclamation", "has_emoji", "ends_with_dot", "has_caps_lock", "has_dot"]
+binary_features = ["has_exclamation", "has_emoji", "has_caps_lock", "has_dot"]
 
 for col in binary_features:
     ct = pd.crosstab(df[col], df["success"])
