@@ -1,8 +1,9 @@
 **Repository Structure**
-/data – Contains a few example .csv files that were already preprocessed (e.g., final campaign states updated).
+- /data – Contains:
+  - A few example `.csv` files that were already preprocessed (e.g., final campaign states updated).
+  - Several additional raw, unprocessed `.csv` files (randomly selected) to demonstrate that the script correctly filters them out when merging data.
 Original data comes from the WebRobots Kickstarter Dataset (https://webrobots.io/kickstarter-datasets/).
-
-Scripts – Python scripts for cleaning, preparing, and analyzing the dataset.
+- Scripts – Python scripts for cleaning, preparing, and analyzing the dataset.
 
 **How to Run**
 1. Install requirements:
