@@ -57,7 +57,7 @@ H4: Campaigns with subtitles written in a mixed style (combining narrative and t
 
 The script for testing H4 is currently being optimized. This was the most complex hypothesis, involving, among other things, the creation of a key for automatically assigning points for the "technical" and "narrative" styles. During the research phase, this analysis was performed using several separate scripts. A consolidated and optimized version will be added to the repository soon.
 
-The sample CSV files provided are only a small subset of the full Kickstarter dataset.
+The sample CSV files provided are only a small subset of the full Kickstarter dataset, so the statistical test results from them may not fully represent the findings presented in my thesis, which are based on a more comprehensive and representative dataset.
 
 The research was focused exclusively on Tabletop Games campaigns.
 
