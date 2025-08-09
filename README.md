@@ -54,6 +54,7 @@ H4: Campaigns with subtitles written in a mixed style (combining narrative and t
 - Logistic regression analysis – Models the relationship between one or more independent variables and a binary dependent variable (0 = failure, 1 = success), using the maximum likelihood estimation method.
 
 **Notes**
+
 The script for testing H4 is currently being optimized. This was the most complex hypothesis, involving, among other things, the creation of a key for automatically assigning points for the "technical" and "narrative" styles. During the research phase, this analysis was performed using several separate scripts. A consolidated and optimized version will be added to the repository soon.
 
 The sample CSV files provided are only a small subset of the full Kickstarter dataset.
