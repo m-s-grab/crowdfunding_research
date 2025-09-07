@@ -57,6 +57,13 @@ def normality_tests(df):
             msg = "normal" if stat < crit_val else "not normal"
             print(f"{col}: stat={stat:.4f}, 5% crit={crit_val:.4f} ({msg})")
 
+# Mann-Whitney tests for title and blurb lengths
+for col in ["title_len_words", "blurb_len_words"]:
+    group_success = df[df["success"] == 1][col]
+    group_failure = df[df["success"] == 0][col]
+    u_stat, p_val = mannwhitneyu(group_success, group_failure, alternative='two-sided')
+    print(f"\nMann-Whitney U test for {col}: U={u_stat:.3f}, p={p_val:.4f}")
+
 # Medians
 print("\nMeans of title/blurb length by final state\n")
 print(df.groupby("success")[["title_len_words", "blurb_len_words"]].mean())
